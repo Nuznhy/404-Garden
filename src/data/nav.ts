@@ -1,6 +1,13 @@
 import { localizePath, type Locale } from "../i18n";
 
-const gardenPathsByLocale = {
+type GardenPath = {
+  href: string;
+  label: string;
+  code: string;
+  description: string;
+};
+
+const gardenPathsByLocale: Record<Locale, GardenPath[]> = {
   en: [
     {
       href: "/cv/",
@@ -65,19 +72,15 @@ const gardenPathsByLocale = {
       description: "що активне саме зараз",
     },
   ],
-} satisfies Record<
-  Locale,
-  Array<{
-    href: string;
-    label: string;
-    code: string;
-    description: string;
-  }>
->;
+};
 
-export function getGardenPaths(locale: Locale) {
-  return gardenPathsByLocale[locale].map((path) => ({
-    ...path,
-    href: localizePath(path.href, locale),
-  }));
+export function getGardenPaths(locale: Locale): GardenPath[] {
+  const pathsForLocale = gardenPathsByLocale[locale];
+
+  return pathsForLocale.map((path) => {
+    return {
+      ...path,
+      href: localizePath(path.href, locale),
+    };
+  });
 }

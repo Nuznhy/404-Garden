@@ -11,22 +11,9 @@ const t = useTranslations(defaultLocale);
   description={t.homeDescription}
   locale={defaultLocale}
 >
-  <!-- <ErrorNotice /> -->
+    <p class="intro">
+      {t.intro}
+    </p>
 
-  <p class="intro">
-    {t.intro}
-  </p>
-
-  <GardenMap />
-
-  <div class="two-column">
-    <!-- <DirectoryListing /> -->
-    <!-- <GardenStatus /> -->
-  </div>
-
-  <!-- <LatestGrowth /> -->
-  <!---->
-  <!-- <CanvasPatch /> -->
-
-  <!-- <VisitorCounter /> -->
+    <GardenMap />
 </GardenLayout>

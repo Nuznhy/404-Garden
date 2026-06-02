@@ -1,0 +1,18 @@
+---
+import GardenLayout from "../layouts/GardenLayout.astro";
+import GardenMap from "../components/GardenMap.astro";
+import { defaultLocale, useTranslations } from "../i18n";
+
+const t = useTranslations(defaultLocale);
+---
+
+<GardenLayout
+  title={t.home}
+  description={t.homeDescription}
+  locale={defaultLocale}
+>
+    <GardenMap />
+    <p class="about-me"> 
+        
+    </p>
+</GardenLayout>

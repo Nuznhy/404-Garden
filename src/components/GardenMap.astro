@@ -11,12 +11,14 @@ const gardenPaths = getGardenPaths(locale);
   <h2 id="garden-map-title">{t.gardenMap}</h2>
 
   <ul class="link-table">
-    {gardenPaths.map((path) => (
-      <li>
-        <a href={path.href}>{path.label}</a>
-        <code>{path.code}</code>
-        <span>{path.description}</span>
-      </li>
-    ))}
+    {gardenPaths.map((path) => {
+      return (
+        <li>
+          <a href={path.href}>{path.label}</a>
+          <code>{path.code}</code>
+          <span>{path.description}</span>
+        </li>
+      );
+    })}
   </ul>
 </section>
