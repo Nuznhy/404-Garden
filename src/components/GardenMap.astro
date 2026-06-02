@@ -1,0 +1,22 @@
+---
+import { getGardenPaths } from "../data/nav";
+import { getLocaleFromUrl, useTranslations } from "../i18n";
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const gardenPaths = getGardenPaths(locale);
+---
+
+<section class="box" aria-labelledby="garden-map-title">
+  <h2 id="garden-map-title">{t.gardenMap}</h2>
+
+  <ul class="link-table">
+    {gardenPaths.map((path) => (
+      <li>
+        <a href={path.href}>{path.label}</a>
+        <code>{path.code}</code>
+        <span>{path.description}</span>
+      </li>
+    ))}
+  </ul>
+</section>

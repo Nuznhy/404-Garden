@@ -1,0 +1,148 @@
+:root {
+  --paper: #f4f1df;
+  --paper-alt: #e8e2c5;
+  --ink: #111111;
+  --line: #777777;
+  --growth: #2f6b2f;
+  --danger: #7a1f1f;
+}
+
+html {
+  background: #c7c7c7;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: #0000ee;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+.page-shell {
+  max-width: 820px;
+  margin: 24px auto;
+  padding: 16px;
+  background: var(--paper);
+  border: 2px ridge var(--line);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 42px;
+}
+
+.site-header h1 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-family: monospace;
+  color: var(--danger);
+}
+
+.tagline {
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.language-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.language-switcher a[aria-current="true"] {
+  color: var(--ink);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.box {
+  margin: 18px 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: var(--paper-alt);
+}
+
+.error-box {
+  border-style: dashed;
+}
+
+.terminal-block,
+.directory-listing {
+  overflow-x: auto;
+  padding: 12px;
+  background: #111111;
+  color: #d8ffd8;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}
+
+.link-table {
+  padding: 0;
+  list-style: none;
+}
+
+.link-table li {
+  display: grid;
+  grid-template-columns: 180px 130px 1fr;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px dotted var(--line);
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+}
+
+.status-box dl {
+  margin: 0;
+}
+
+.status-box div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 8px;
+}
+
+.status-box dt {
+  font-weight: bold;
+}
+
+.canvas-box canvas {
+  display: block;
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  background: #111111;
+}
+
+.site-footer {
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .link-table li,
+  .two-column,
+  .status-box div {
+    display: block;
+  }
+
+  .page-shell {
+    margin: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+}

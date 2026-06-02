@@ -1,8 +1,32 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/RetroLayout.astro';
+import GardenLayout from "../layouts/GardenLayout.astro";
+import GardenMap from "../components/GardenMap.astro";
+import { defaultLocale, useTranslations } from "../i18n";
+
+const t = useTranslations(defaultLocale);
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<GardenLayout
+  title={t.home}
+  description={t.homeDescription}
+  locale={defaultLocale}
+>
+  <!-- <ErrorNotice /> -->
+
+  <p class="intro">
+    {t.intro}
+  </p>
+
+  <GardenMap />
+
+  <div class="two-column">
+    <!-- <DirectoryListing /> -->
+    <!-- <GardenStatus /> -->
+  </div>
+
+  <!-- <LatestGrowth /> -->
+  <!---->
+  <!-- <CanvasPatch /> -->
+
+  <!-- <VisitorCounter /> -->
+</GardenLayout>
