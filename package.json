@@ -9,9 +9,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "npm run build && scp -r ./dist nuznhy@home.server:~/containers/portfolio"
   },
   "dependencies": {
-    "astro": "^6.4.3"
+    "astro": "^6.4.3",
+    "three": "^0.184.0"
   }
 }
