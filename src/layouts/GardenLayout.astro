@@ -38,6 +38,8 @@ const currentPathWithoutLocale = Astro.url.pathname.replace(
 
   <body>
     <div class="page-shell">
+      <canvas class="frame-scene" aria-hidden="true"></canvas>
+
       <header class="site-header">
         <p class="eyebrow">{t.eyebrow}</p>
         <h1><a href={localizePath("/", currentLocale)}>{t.title}</a></h1>
@@ -68,5 +70,11 @@ const currentPathWithoutLocale = Astro.url.pathname.replace(
         <p>{t.footer}</p>
       </footer>
     </div>
+
+    <script>
+      import { initGardenFrame } from "../scripts/frameScene";
+
+      initGardenFrame();
+    </script>
   </body>
 </html>
