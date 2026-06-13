@@ -1,2 +1,47 @@
 ---
+import GardenLayout from "../../layouts/GardenLayout.astro";
+import "../../styles/404.css";
+import { useTranslations } from "../../i18n";
+
+const t = useTranslations("uk");
 ---
+
+<GardenLayout
+  title={t.notFoundTitle}
+  description={t.notFoundDescription}
+  locale="uk"
+>
+  <div class="not-found-container">
+    <div class="glitch-text" aria-hidden="true">
+      {t.notFoundGlitch}
+    </div>
+    
+    <h1 class="error-code">404</h1>
+    
+    <p class="not-found-message">
+      {t.notFoundMessage}
+    </p>
+    
+    <div class="terminal-block terminal-output">
+      <p>{t.notFoundTerminalPrompt}</p>
+      <p>{t.notFoundTerminalOutput}</p>
+    </div>
+    
+    <ul class="cause-list">
+      <li>{t.notFoundCause1}</li>
+      <li>{t.notFoundCause2}</li>
+      <li>{t.notFoundCause3}</li>
+    </ul>
+    
+    <div class="action-links">
+      <a href="/uk/">
+        ← {t.notFoundReturnHome}
+      </a>
+      <a href="/uk/#map">
+        {t.notFoundTryNavigate} →
+      </a>
+    </div>
+  </div>
+  
+  <div class="scanline-overlay" aria-hidden="true"></div>
+</GardenLayout>
